@@ -16,6 +16,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
+JWT_DECODE_KEY = os.environ.get('JWT_DECODE_KEY', 'your_default_jwt_decode_key')  # Replace with a strong, random key
+
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-ee!c30j7$z!u0won*+i%g4l@cpwuuw8qd&r^e2lb=iyl&jr4-t')
 
