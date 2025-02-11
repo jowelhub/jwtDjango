@@ -24,8 +24,6 @@ SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-ee!c30j7$z!u0won*+i%g
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DEBUG', 'True') == 'True'
 
-ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', 'localhost').split(',')
-
 # Application definition
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -85,9 +83,11 @@ SIMPLE_JWT = {
     'SLIDING_TOKEN_REFRESH_LIFETIME': timedelta(days=1),
 }
 
-CORS_ALLOWED_ORIGINS = os.environ.get('CORS_ALLOWED_ORIGINS', 'http://localhost:3000').split(',')
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost',] 
 
-AUTH_USER_MODEL = 'api.User'  # Change core to api
+CORS_ALLOWED_ORIGINS = ['http://localhost:3000','https://www.example.com',]
+
+AUTH_USER_MODEL = 'api.User'
 
 ################################################################################
 
